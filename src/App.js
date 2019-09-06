@@ -1,10 +1,10 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import * as jsonData from "./graph_data.json";
-import * as styles from "./App.css"
+import * as styles from "./App.css";
 
 function App() {
-  const makeArray = key => jsonData.default.map( element => element[key])
+  const makeArray = key => jsonData.default.map(element => element[key]);
 
   let labels = makeArray("label");
   let values = makeArray("value");
@@ -38,9 +38,15 @@ function App() {
             ],
             xAxes: [
               {
+                ticks: {
+                  maxRotation: 0,
+                  minRotation: 0,
+                  autoSkip: false
+                },
                 scaleLabel: {
                   display: true,
-                  labelString: "Call Type"
+                  labelString: "Call Type",
+                  fontStyle: "bold"
                 }
               }
             ]
